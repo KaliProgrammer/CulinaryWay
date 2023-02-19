@@ -57,10 +57,7 @@ class VideosCollectionViewCell: UICollectionViewCell, YTPlayerViewDelegate {
     
     func setupContent() {
         contentView.addSubview(youtubePlayer)
-    }
-   
- 
-   
+    } 
 }
 
 extension VideosCollectionViewCell {

@@ -110,7 +110,7 @@ class MyFavoriteViewController: MainViewController {
             mainView.collectionView.deselectItem(at: indexPath, animated: false)
         })
         mainView.collectionView.indexPathsForVisibleItems.forEach { (indexPath) in
-            let cell = mainView.collectionView.cellForItem(at: indexPath) as! MyCell
+            let cell = mainView.collectionView.cellForItem(at: indexPath) as! MainCollectionViewCell
             cell.isAtEditState = editing
            
             editing ? addDeleteButton() : navigationItem.setRightBarButton(nil, animated: true)
@@ -178,8 +178,8 @@ class MyFavoriteViewController: MainViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? MyCell else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath)
             return cell
         }
         
@@ -202,12 +202,12 @@ class MyFavoriteViewController: MainViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard isEditing else  {
-            let viewController = RecipeViewController()
-            
+            let viewModel = RecipeViewModel()
+            let viewController = RecipeViewController(viewModel: viewModel)
             viewController.selectedIndex = indexPath.row
             
             if let description = savedRecipe[indexPath.row].recipe {
-                viewController.apply(textDescription: description)
+                viewModel.apply(textDescription: description, from: viewController.contentView)
                 
                 
                 
@@ -217,7 +217,7 @@ class MyFavoriteViewController: MainViewController {
 
                 
                 if let dalImage = savedRecipe[indexPath.row].image {
-                    viewController.loadImage(image: UIImage(named: dalImage)!)
+                    viewModel.loadImage(image: UIImage(named: dalImage)!, from: viewController.contentView)
                     storedImages.removeAll()
                 }
             }

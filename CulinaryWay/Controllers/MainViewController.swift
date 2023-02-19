@@ -11,7 +11,6 @@ import SnapKit
 class MainViewController: UIViewController {
     
     let mainView = MainView()
-    let cell = MyCell()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +18,17 @@ class MainViewController: UIViewController {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
         setupMainView()
-        cell.isSelected = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
        
-       // mainView.collectionView.reloadData()
+        mainView.collectionView.reloadData()
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
       
-       // mainView.collectionView.reloadData()
+        mainView.collectionView.reloadData()
        
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
     }
@@ -59,7 +57,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? MyCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
             return cell
         }
@@ -117,19 +115,19 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(
-//            width: collectionView.frame.size.width/2.3,
-//            height: collectionView.frame.size.width/1.8
-//        )
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 8
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        20
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(
+            width: collectionView.frame.size.width/2.3,
+            height: collectionView.frame.size.width/1.8
+        )
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        20
+    }
     
 }

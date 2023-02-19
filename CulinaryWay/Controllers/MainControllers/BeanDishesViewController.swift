@@ -9,7 +9,7 @@ import UIKit
 
 class BeanDishesViewController: UIViewController {
     
-  let beansView = BeansView()
+  let beansView = ViewForAllDishes()
    public var storedIndex = 0
 
     override func viewDidLoad() {
@@ -47,49 +47,30 @@ class BeanDishesViewController: UIViewController {
 }
 
 extension BeanDishesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        20
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dalData.count
     }
-    
    
-    
-    //footer
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//           let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CollectionViewReusableFooter.identifier, for: indexPath) as! CollectionViewReusableFooter
-//           return footer
-//       }
-//
-//       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-//           CGSize(width: 100, height: 50)
-//       }
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecipeCollectionViewCell.identifier, for: indexPath) as! RecipeCollectionViewCell
-        item.apply(beansLabel: dalPictures[indexPath.row])
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCustomCollectionViewCell
+        item.apply(spiceLabel: dalPictures[indexPath.row])
         if let pictures = UIImage(named: dalPictures[indexPath.row]) {
-            item.apply(beansImage: pictures)
+            item.apply(photos: pictures)
         }
-        //item.setOpacity()
         item.layer.cornerRadius = 28
         item.setup(cell: item)
         return item
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = RecipeViewController()
+        let viewModel = RecipeViewModel()
+        let viewController = RecipeViewController(viewModel: viewModel)
         viewController.selectedIndex = indexPath.row
         
-        viewController.apply(textDescription: dalData[indexPath.row].dish)
+        viewModel.apply(textDescription: dalData[indexPath.row].dish, from: viewController.contentView)
         if let dalImage = UIImage(named: dalPictures[indexPath.row]) {
-            viewController.loadImage(image: dalImage)            
+            viewModel.loadImage(image: dalImage, from: viewController.contentView)            
         }
         dishNames.append(dalData[indexPath.row])
   

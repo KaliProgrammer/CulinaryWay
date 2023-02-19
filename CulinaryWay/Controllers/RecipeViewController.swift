@@ -6,25 +6,29 @@
 //
 
 import UIKit
-import CoreData
 import SnapKit
-
 
 protocol AddRecipeDelegate {
     func addRecipe(recipe: Int)
 }
 
-
 class RecipeViewController: UIViewController {
+    
+    let viewModel: RecipeViewModel
+    
+    init(viewModel: RecipeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     var buttonIsEnabled: Bool = true
     var buttonIsHidden: Bool = false
     
     var selectedIndex: Int = 0
-    
-    var delegate: AddRecipeDelegate?
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var contentView = RecipeView()
     
@@ -57,81 +61,18 @@ class RecipeViewController: UIViewController {
         button.setImage(UIImage(systemName: "heart"), for: .normal)
         button.setPreferredSymbolConfiguration(congiguration, forImageIn: .normal)
         button.tintColor = .red
-        //button.backgroundColor = .orange
-        //button.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
         button.addTarget(self, action: #selector(addItems), for: .touchUpInside)
         
         
         button.setTitleColor(.red, for: .normal)
         let barButtonItem = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButtonItem
-        
     }
-    
-    //ADD BUTTON
-    
+        
     @objc func addItems(sender: UIButton) {
-        guard dishNames.isEmpty else {
-            createItem(image: dishNames[0].image, description: dishNames[0].dish)
-            sender.isSelected = !sender.isSelected
-            
-            if sender.isSelected {
-                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                sender.tintColor = .red
-                let count = savedRecipe.count
-                delegate?.addRecipe(recipe: count)
-                dishNames.removeAll()
-               
-            }
-            return
-        }
-        
-//        sender.isEnabled = false
-     
-//                else {
-//                    sender.setImage(UIImage(systemName: "heart"), for: .normal)
-//                }
-        
+        viewModel.addItems(sender: sender, viewController: self)
     }
-    
-    //    private func animate() {
-    //        UIView.animate(withDuration: 1) {
-    //          //  self.contentView.isOpaque = false
-    //            self.contentView.frame = CGRect(x: -500, y: -500, width: 20, height: 20)
-    //        } completion: { done in
-    //            if done {
-    //                UIView.animate(withDuration: 1) {
-    ////                    self.contentView.frame = CGRect(x: -500, y: -500, width: 50, height: 50)
-    ////                   self.contentView.isOpaque = false
-    //                }
-    //            }
-    //        }
-    //
-    //    }
-    //
-    
-    
-    private func createItem(image: String, description: String) {
-        let newItem = Dish(context: context)
-        newItem.image = image
-        newItem.recipe = description
-        
-        if savedRecipe.contains(where: { $0.image == newItem.image }) {
-            let alert = UIAlertController(title: "Упс", message: "Такой рецепт уже был сохранён!", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .cancel)
-            alert.addAction(action)
-            self.present(alert, animated: true)
-            return
-        }
-        
-        savedRecipe.append(newItem)
-        do {
-            try self.context.save()
-        } catch let error as NSError {
-            print(error)
-        }
-    }
-    
+
     func setupContentView() {
         scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -142,13 +83,6 @@ class RecipeViewController: UIViewController {
             contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
-    }
-    
-    func loadImage(image: UIImage) {
-        contentView.dishImage.image = image
-    }
-    func apply(textDescription: String) {
-        contentView.descriptionLabel.text = textDescription
     }
     
     func rightButton(isEnabled: Bool, buttonIsHidden: Bool) {

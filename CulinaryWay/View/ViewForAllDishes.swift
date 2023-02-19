@@ -8,18 +8,21 @@
 import Foundation
 import UIKit
 import SnapKit
+import CollectionViewPagingLayout
 
-class BeansView: UIView {
+
+class ViewForAllDishes: UIView {
     
         lazy var beansCollection: UICollectionView = {
         let screenSize = UIScreen.main.bounds
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-            layout.itemSize =  CGSize(width: screenSize.width-50, height: screenSize.height/3)
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = .white
-            collection.showsVerticalScrollIndicator = false
-        collection.register(RecipeCollectionViewCell.self, forCellWithReuseIdentifier: RecipeCollectionViewCell.identifier)
+            let layout = CollectionViewPagingLayout()
+            let collection = UICollectionView(
+                      frame: self.frame,
+                      collectionViewLayout: layout
+                  )
+            collection.backgroundColor = .white
+            collection.showsHorizontalScrollIndicator = false
+        collection.register(MyCustomCollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
           
         return collection
     }()
@@ -32,8 +35,6 @@ class BeansView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-   
     
     private func setupCollection() {
         self.addSubview(beansCollection)

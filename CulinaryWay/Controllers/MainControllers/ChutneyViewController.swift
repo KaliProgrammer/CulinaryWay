@@ -9,7 +9,7 @@ import UIKit
 
 class ChutneyViewController: UIViewController {
 
-    let chutneyView = BeansView()
+    let chutneyView = ViewForAllDishes()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +54,10 @@ extension ChutneyViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecipeCollectionViewCell.identifier, for: indexPath) as! RecipeCollectionViewCell
-        item.apply(beansLabel: chutneyPictures[indexPath.row])
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCustomCollectionViewCell
+        item.apply(spiceLabel: chutneyPictures[indexPath.row])
         if let pictures = UIImage(named: chutneyPictures[indexPath.row]) {
-            item.apply(beansImage: pictures)
+            item.apply(photos: pictures)
         }
         item.layer.cornerRadius = 28
         item.setup(cell: item)
@@ -66,12 +66,13 @@ extension ChutneyViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = RecipeViewController()
+        let viewModel = RecipeViewModel()
+        let viewController = RecipeViewController(viewModel: viewModel)
         viewController.selectedIndex = indexPath.row
         
-        viewController.apply(textDescription: chutneyData[indexPath.row].dish)
+        viewModel.apply(textDescription: chutneyData[indexPath.row].dish, from: viewController.contentView)
         if let breadImage = UIImage(named: chutneyPictures[indexPath.row]) {
-            viewController.loadImage(image: breadImage)
+            viewModel.loadImage(image: breadImage, from: viewController.contentView)
         }
         dishNames.append(chutneyData[indexPath.row])
         navigationController?.pushViewController(viewController, animated: true)

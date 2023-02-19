@@ -7,24 +7,16 @@
 
 import Foundation
 import UIKit
-import CollectionViewPagingLayout
 
 class MainView: UIView {
     
     lazy var collectionView: UICollectionView = {
-        let layout = CollectionViewPagingLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        let collection = UICollectionView(
-                  frame: self.frame,
-                  collectionViewLayout: layout
-              )
-
-        collection.isPagingEnabled = true
-        
-        collection.register(MyCell.self, forCellWithReuseIdentifier: "MyCell")
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
         collection.register(FruitCollectionViewCell.self, forCellWithReuseIdentifier: FruitCollectionViewCell.identifier)
-        collection.showsHorizontalScrollIndicator = false
-        collection.decelerationRate = .fast
+        collection.showsVerticalScrollIndicator = false
         collection.allowsSelection = true
         collection.allowsMultipleSelection = false
         return collection
@@ -52,4 +44,5 @@ class MainView: UIView {
     
 
 }
+
 

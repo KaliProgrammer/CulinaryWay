@@ -27,7 +27,6 @@ class RecipeView: UIView {
         return imageView
     }()
 
-    
      lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +53,6 @@ class RecipeView: UIView {
             dishImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
             dishImage.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             dishImage.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            //dishImage.bottomAnchor.constraint(equalTo:descriptionLabel.topAnchor, constant: -16),
             dishImage.heightAnchor.constraint(equalToConstant: 200)
         ])
     }

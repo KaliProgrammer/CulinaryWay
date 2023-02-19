@@ -11,6 +11,7 @@
 		D006E911299FE48400DBC66F /* SpiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006E910299FE48400DBC66F /* SpiceCollectionViewCell.swift */; };
 		D0089F4229A0793400D72689 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = D0089F4129A0793400D72689 /* CollectionViewPagingLayout */; };
 		D0089F4429A0795F00D72689 /* MyCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0089F4329A0795F00D72689 /* MyCustomCollectionViewCell.swift */; };
+		D0089F4D29A2884C00D72689 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0089F4C29A2884C00D72689 /* RecipeViewModel.swift */; };
 		D016A27A2982D92900164068 /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016A2792982D92900164068 /* VideosCollectionViewCell.swift */; };
 		D016A27C2982DCE200164068 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016A27B2982DCE200164068 /* VideoModel.swift */; };
 		D016A27E2982E9AB00164068 /* ChutneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016A27D2982E9AB00164068 /* ChutneyViewController.swift */; };
@@ -38,7 +39,6 @@
 		D069DB02294D357A000E93F4 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069DB01294D357A000E93F4 /* NetworkTypes.swift */; };
 		D069DB04294D3615000E93F4 /* FruitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069DB03294D3615000E93F4 /* FruitsModel.swift */; };
 		D070AC96294C2A3A0097629C /* FruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D070AC95294C2A3A0097629C /* FruitsViewController.swift */; };
-		D072C40F2987393900D588DC /* NoRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072C40E2987393900D588DC /* NoRecipesView.swift */; };
 		D072C45B29878EA100D588DC /* FruitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072C45A29878EA100D588DC /* FruitCollectionViewCell.swift */; };
 		D072C45D2988B30A00D588DC /* SabjiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072C45C2988B30A00D588DC /* SabjiViewController.swift */; };
 		D0AA9E5D294A430A006EB54F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA9E5C294A430A006EB54F /* AppDelegate.swift */; };
@@ -50,7 +50,7 @@
 		D0AD4CE2299E8F0D00151954 /* samosa.json in Resources */ = {isa = PBXBuildFile; fileRef = D0AD4CE1299E8F0D00151954 /* samosa.json */; };
 		D0AD4CE4299F2AD000151954 /* SpicesCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD4CE3299F2AD000151954 /* SpicesCategories.swift */; };
 		D0AD4CE6299F2CD600151954 /* SpicesDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD4CE5299F2CD600151954 /* SpicesDescriptionViewController.swift */; };
-		D0ADA46A294B7BAA00CF5B2E /* BeansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADA469294B7BAA00CF5B2E /* BeansView.swift */; };
+		D0ADA46A294B7BAA00CF5B2E /* ViewForAllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADA469294B7BAA00CF5B2E /* ViewForAllDishes.swift */; };
 		D0ADA46C294B7C2800CF5B2E /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADA46B294B7C2800CF5B2E /* RecipeCollectionViewCell.swift */; };
 		D0ADA46E294B80A000CF5B2E /* AllRecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADA46D294B80A000CF5B2E /* AllRecipeCategory.swift */; };
 		D0B09C5829845FD400B2EEC2 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B09C5729845FD400B2EEC2 /* NetworkMonitor.swift */; };
@@ -66,6 +66,7 @@
 		A596F2D9ABA1A8A8626D8F2C /* Pods-CulinaryWay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CulinaryWay.release.xcconfig"; path = "Target Support Files/Pods-CulinaryWay/Pods-CulinaryWay.release.xcconfig"; sourceTree = "<group>"; };
 		D006E910299FE48400DBC66F /* SpiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0089F4329A0795F00D72689 /* MyCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0089F4C29A2884C00D72689 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		D016A2792982D92900164068 /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		D016A27B2982DCE200164068 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		D016A27D2982E9AB00164068 /* ChutneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChutneyViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		D069DB01294D357A000E93F4 /* NetworkTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		D069DB03294D3615000E93F4 /* FruitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsModel.swift; sourceTree = "<group>"; };
 		D070AC95294C2A3A0097629C /* FruitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewController.swift; sourceTree = "<group>"; };
-		D072C40E2987393900D588DC /* NoRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRecipesView.swift; sourceTree = "<group>"; };
 		D072C45A29878EA100D588DC /* FruitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCollectionViewCell.swift; sourceTree = "<group>"; };
 		D072C45C2988B30A00D588DC /* SabjiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SabjiViewController.swift; sourceTree = "<group>"; };
 		D0AA9E59294A430A006EB54F /* CulinaryWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CulinaryWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +106,7 @@
 		D0AD4CE1299E8F0D00151954 /* samosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samosa.json; sourceTree = "<group>"; };
 		D0AD4CE3299F2AD000151954 /* SpicesCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesCategories.swift; sourceTree = "<group>"; };
 		D0AD4CE5299F2CD600151954 /* SpicesDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesDescriptionViewController.swift; sourceTree = "<group>"; };
-		D0ADA469294B7BAA00CF5B2E /* BeansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeansView.swift; sourceTree = "<group>"; };
+		D0ADA469294B7BAA00CF5B2E /* ViewForAllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForAllDishes.swift; sourceTree = "<group>"; };
 		D0ADA46B294B7C2800CF5B2E /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0ADA46D294B80A000CF5B2E /* AllRecipeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipeCategory.swift; sourceTree = "<group>"; };
 		D0B09C5729845FD400B2EEC2 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
@@ -149,13 +149,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0089F4B29A2882600D72689 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0089F4C29A2884C00D72689 /* RecipeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D040EF5F294A53970087D671 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D0ADA468294B7B5600CF5B2E /* MainsViews */,
 				D040EF60294A53B30087D671 /* MainView.swift */,
-				D072C40E2987393900D588DC /* NoRecipesView.swift */,
-				D0ADA469294B7BAA00CF5B2E /* BeansView.swift */,
+				D0ADA469294B7BAA00CF5B2E /* ViewForAllDishes.swift */,
 				D040EF63294A54770087D671 /* SpicesView.swift */,
 				D040EF69294A569C0087D671 /* VideoView.swift */,
 				D040EF6B294A56A50087D671 /* MyFavoriteView.swift */,
@@ -252,6 +259,7 @@
 		D0AA9E5B294A430A006EB54F /* CulinaryWay */ = {
 			isa = PBXGroup;
 			children = (
+				D0089F4B29A2882600D72689 /* ViewModel */,
 				D0B09C5629845FBC00B2EEC2 /* NetworkMonitor */,
 				D0D6979F29799E2500059F25 /* CoreData */,
 				D069DAF9294D351B000E93F4 /* NetworkLayer */,
@@ -442,12 +450,13 @@
 				D040EF6C294A56A50087D671 /* MyFavoriteView.swift in Sources */,
 				D040EF5A294A51170087D671 /* TabBarViewController.swift in Sources */,
 				D040EF7E294A87B60087D671 /* DrinkViewController.swift in Sources */,
+				D0089F4D29A2884C00D72689 /* RecipeViewModel.swift in Sources */,
 				D051EF78297B270F00833608 /* Dish+CoreDataProperties.swift in Sources */,
 				D069DB02294D357A000E93F4 /* NetworkTypes.swift in Sources */,
 				D040EF7C294A878F0087D671 /* DessertsViewController.swift in Sources */,
 				D040EF61294A53B30087D671 /* MainView.swift in Sources */,
 				D0D6979E29799BEB00059F25 /* CulinaryWay.xcdatamodeld in Sources */,
-				D0ADA46A294B7BAA00CF5B2E /* BeansView.swift in Sources */,
+				D0ADA46A294B7BAA00CF5B2E /* ViewForAllDishes.swift in Sources */,
 				D040EF66294A565C0087D671 /* VideoViewController.swift in Sources */,
 				D069DAFF294D354B000E93F4 /* URLSession.swift in Sources */,
 				D040EF6E294A597E0087D671 /* MainCollectionViewCell.swift in Sources */,
@@ -476,7 +485,6 @@
 				D072C45D2988B30A00D588DC /* SabjiViewController.swift in Sources */,
 				D016A27C2982DCE200164068 /* VideoModel.swift in Sources */,
 				D0C9DA20295007470058FB53 /* RecipeViewController.swift in Sources */,
-				D072C40F2987393900D588DC /* NoRecipesView.swift in Sources */,
 				D070AC96294C2A3A0097629C /* FruitsViewController.swift in Sources */,
 				D0B09C5829845FD400B2EEC2 /* NetworkMonitor.swift in Sources */,
 				D069DB04294D3615000E93F4 /* FruitsModel.swift in Sources */,
