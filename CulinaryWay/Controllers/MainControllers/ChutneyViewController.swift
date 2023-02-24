@@ -67,7 +67,7 @@ extension ChutneyViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewModel = RecipeViewModel()
-        let viewController = RecipeViewController(viewModel: viewModel)
+        let viewController = RecipeViewController()
         viewController.selectedIndex = indexPath.row
         
         viewModel.apply(textDescription: chutneyData[indexPath.row].dish, from: viewController.contentView)

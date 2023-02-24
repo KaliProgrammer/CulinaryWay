@@ -23,7 +23,7 @@ class RecipeView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 18
         imageView.contentMode = .scaleAspectFill
-         imageView.clipsToBounds = true
+        imageView.clipsToBounds = true
         return imageView
     }()
 

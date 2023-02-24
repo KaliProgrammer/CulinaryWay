@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 protocol AddRecipeDelegate {
     func addRecipe(recipe: Int)
@@ -14,16 +15,8 @@ protocol AddRecipeDelegate {
 
 class RecipeViewController: UIViewController {
     
-    let viewModel: RecipeViewModel
-    
-    init(viewModel: RecipeViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    let viewModel = RecipeViewModel()
+    var cancellables = Set<AnyCancellable>()
     
     var buttonIsEnabled: Bool = true
     var buttonIsHidden: Bool = false
@@ -62,8 +55,6 @@ class RecipeViewController: UIViewController {
         button.setPreferredSymbolConfiguration(congiguration, forImageIn: .normal)
         button.tintColor = .red
         button.addTarget(self, action: #selector(addItems), for: .touchUpInside)
-        
-        
         button.setTitleColor(.red, for: .normal)
         let barButtonItem = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButtonItem

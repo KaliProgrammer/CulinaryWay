@@ -8,7 +8,7 @@
 import UIKit
 
 class BeanDishesViewController: UIViewController {
-    
+
   let beansView = ViewForAllDishes()
    public var storedIndex = 0
 
@@ -65,17 +65,15 @@ extension BeanDishesViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewModel = RecipeViewModel()
-        let viewController = RecipeViewController(viewModel: viewModel)
+        let viewController = RecipeViewController()
         viewController.selectedIndex = indexPath.row
-        
         viewModel.apply(textDescription: dalData[indexPath.row].dish, from: viewController.contentView)
         if let dalImage = UIImage(named: dalPictures[indexPath.row]) {
-            viewModel.loadImage(image: dalImage, from: viewController.contentView)            
+            viewModel.loadImage(image: dalImage, from: viewController.contentView)
         }
         dishNames.append(dalData[indexPath.row])
   
         navigationController?.pushViewController(viewController, animated: true)
-       
     }
 }
 

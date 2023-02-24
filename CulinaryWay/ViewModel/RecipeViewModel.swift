@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import CoreData
+import Combine
+
 
 protocol RecipeProtocol: AnyObject {
     func addItems(sender: UIButton, viewController: RecipeViewController)
@@ -16,12 +18,21 @@ protocol RecipeProtocol: AnyObject {
     var context: NSManagedObjectContext { get set }
 }
 
-protocol ApplyView {
+protocol ApplyDescriptionProtocol {
     func loadImage(image: UIImage, from view: RecipeView)
     func apply(textDescription: String, from view: RecipeView)
 }
 
-class RecipeViewModel: RecipeProtocol, ApplyView {
+class RecipeViewModel: RecipeProtocol, ApplyDescriptionProtocol {
+    
+    var buttonIsEnabled = PassthroughSubject<Bool, Never>()
+    var buttonIsHidden = PassthroughSubject<Bool, Never>()
+    
+    func buttonState() {
+        buttonIsEnabled.send(true)
+        buttonIsHidden.send(false)
+    }
+    
     var contentView = RecipeView()
     
     func loadImage(image: UIImage, from view: RecipeView) {
@@ -46,29 +57,29 @@ class RecipeViewModel: RecipeProtocol, ApplyView {
             alert.addAction(action)
             viewController.present(alert, animated: true)
             return
-        }
-        
-        savedRecipe.append(newItem)
-        do {
-            try self.context.save()
-        } catch let error as NSError {
-            print(error)
+        } else {
+            savedRecipe.append(newItem)
+            do {
+                try self.context.save()
+            } catch let error as NSError {
+                print(error)
+            }
         }
     }
     
     func addItems(sender: UIButton, viewController: RecipeViewController) {
-        guard dishNames.isEmpty else {
-            createItem(image: dishNames[0].image, description: dishNames[0].dish, viewController: viewController)
+        
+        for item in dishNames {
+            createItem(image: item.image, description: item.dish, viewController: viewController)
+        }
+        let count = savedRecipe.count
+        delegate?.addRecipe(recipe: count)
+        dishNames.removeAll()
+           // createItem(image: dishNames[0].image, description: dishNames[0].dish, viewController: viewController)
             sender.isSelected = !sender.isSelected
-            
             if sender.isSelected {
                 sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 sender.tintColor = .red
-                let count = savedRecipe.count
-                delegate?.addRecipe(recipe: count)
-                dishNames.removeAll()
             }
-            return
-        }
     }
 }

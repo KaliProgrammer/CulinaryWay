@@ -1,24 +1,20 @@
-//
-//  MyFavoriteViewController.swift
-//  CulinaryWay
-//
-//  Created by MacBook Air on 14.12.2022.
-//
 
 import UIKit
 import CoreData
 import SnapKit
 import Lottie
+import Combine
 
 class MyFavoriteViewController: MainViewController {
     
-//    let noRecipeView = NoRecipesView()
+    let viewModel = MyFavoriteViewModel()
+    var cancellable = Set<AnyCancellable>()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     lazy var emptyStateMessage: UILabel = {
           let messageLabel = UILabel()
           messageLabel.textColor = .black
-          messageLabel.text = "Нет рецептов"
           messageLabel.numberOfLines = 0;
           messageLabel.textAlignment = .center;
           messageLabel.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
@@ -65,7 +61,9 @@ class MyFavoriteViewController: MainViewController {
         mainView.collectionView.addGestureRecognizer(gesture)
         fetchList()
         setupAnimationView()
- 
+        
+       
+
     }
     
     func setupAnimationView() {
@@ -73,7 +71,7 @@ class MyFavoriteViewController: MainViewController {
         animationView!.frame = view.frame
         animationView!.contentMode = .scaleAspectFit
         animationView!.loopMode = .loop
-        animationView!.animationSpeed = 1.0
+        animationView?.animationSpeed = 0.5
         mainView.addSubview(animationView!)
         animationView!.play()
     }
@@ -84,9 +82,9 @@ class MyFavoriteViewController: MainViewController {
         }
         super.viewWillAppear(animated)
         addEditButton()
-        DispatchQueue.main.async {
-            self.mainView.collectionView.reloadData()
-        }
+//        DispatchQueue.main.async {
+//            self.mainView.collectionView.reloadData()
+//        }
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
     
@@ -203,14 +201,12 @@ class MyFavoriteViewController: MainViewController {
         
         guard isEditing else  {
             let viewModel = RecipeViewModel()
-            let viewController = RecipeViewController(viewModel: viewModel)
+            let viewController = RecipeViewController()
             viewController.selectedIndex = indexPath.row
             
             if let description = savedRecipe[indexPath.row].recipe {
                 viewModel.apply(textDescription: description, from: viewController.contentView)
-                
-                
-                
+           
                 viewController.buttonIsEnabled = false
                 viewController.buttonIsHidden = true
                 viewController.rightButton(isEnabled: viewController.buttonIsEnabled, buttonIsHidden: viewController.buttonIsHidden)
@@ -242,22 +238,22 @@ class MyFavoriteViewController: MainViewController {
     
     func showEmptyState() {
         mainView.addSubview(animationView!)
-        //mainView.addSubview(noRecipeImage)
         mainView.addSubview(emptyStateMessage)
 
-//        noRecipeImage.snp.makeConstraints { make in
-//            make.centerX.equalTo(self.view)
-//            make.centerY.equalTo(self.view).offset(-40)
-//            make.height.width.equalTo(100)
-       // }
         emptyStateMessage.snp.makeConstraints { make in
             make.centerX.equalTo(self.view)
             make.centerY.equalTo(self.view).offset(140)
         }
+        viewModel.setText()
+        viewModel.labelText
+            .receive(on: DispatchQueue.main)
+            .map{$0}
+            .assign(to: \.text, on: self.emptyStateMessage)
+            .store(in: &cancellable)
+        
     }
         func hideEmptyState() {
             animationView?.removeFromSuperview()
-           // noRecipeImage.removeFromSuperview()
             emptyStateMessage.removeFromSuperview()
         }
     

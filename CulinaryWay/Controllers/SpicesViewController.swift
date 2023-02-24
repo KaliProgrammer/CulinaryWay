@@ -45,17 +45,21 @@ extension SpicesViewController: UICollectionViewDataSource, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpiceCollectionViewCell.identifier, for: indexPath) as! SpiceCollectionViewCell
         let categoryName = spicesCategories[indexPath.row].spicesCategory
         if indexPath.row == 0 {
-            cell.apply(spiceLabel: categoryName, color: .orange, cornerRadius: 28)
+            
+            cell.apply(spiceLabel: categoryName, color: .systemMint)
+            if let pictures = UIImage(named: "Mint") {
+                cell.apply(photo: pictures)
+            }
         }
         else {
-             cell.apply(spiceLabel: categoryName, color: .red, cornerRadius: 28)
+            cell.apply(spiceLabel: categoryName, color: .red)
+            if let pictures = UIImage(named: "pepper") {
+                cell.apply(photo: pictures)
+            }
          }
         return cell
     }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = SpicesDescriptionViewController()
         switch indexPath.row {

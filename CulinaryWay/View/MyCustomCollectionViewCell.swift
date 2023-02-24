@@ -77,40 +77,13 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
         return label
     }()
     
-    
-    
-    //        override init(frame: CGRect) {
-    //            super.init(frame: frame)
-    //            contentView.addSubview(photoOfAllDishes)
-    //            contentView.layer.cornerRadius = 20
-    //            contentView.layer.masksToBounds = true
-    //            contentView.clipsToBounds = true
-    //            setupDishesLabel()
-    //        }
-    
-    
-    //        required init?(coder: NSCoder) {
-    //            fatalError("init(coder:) has not been implemented")
-    //        }
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //            photoOfAllDishes.frame = contentView.bounds
-        //            photoOfAllDishes.snp.makeConstraints { make in
-        //                make.top.equalTo(card)
-        //                make.leading.trailing.equalTo(card)
-        //                make.bottom.equalTo(card.snp.bottom).offset(-40)
-        //            }
+  
     }
-    
-    //         func setupDishesLabel() {
-    //            card.addSubview(dishesLabel)
-    //             dishesLabel.snp.makeConstraints { make in
-    //                 make.top.equalTo(photoOfAllDishes.snp.bottom)
-    //                 make.height.equalTo(40)
-    //                 make.leading.trailing.equalTo(self.card)
-    //             }
-    //        }
+
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -168,24 +141,18 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
     
     func setup() {
         
-        // Adjust the card view frame
-        // you can use Auto-layout too
-        
         card.addSubview(photoOfAllDishes)
         card.addSubview(dishesLabel)
         dishesLabel.snp.makeConstraints { make in
-            //make.top.equalTo(card.snp.top).offset(29)
             make.height.equalTo(80)
             make.leading.trailing.equalTo(self.card)
             make.bottom.equalTo(card.snp.bottom)
         }
-        
         photoOfAllDishes.snp.makeConstraints { make in
             make.top.equalTo(card)
             make.leading.trailing.equalTo(card)
             make.bottom.equalTo(card.snp.bottom).offset(-40)
         }
-        
         contentView.addSubview(card)
     }
 }
