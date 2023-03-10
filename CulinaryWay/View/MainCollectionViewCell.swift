@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class MainCollectionViewCell: UICollectionViewCell {
-    static let identifier = "MainCollectionViewCell"
+//    static let identifier = "MainCollectionViewCell"
     
     var isAtEditState: Bool = false {
         didSet {

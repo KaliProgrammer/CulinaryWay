@@ -14,16 +14,15 @@ import CollectionViewPagingLayout
 class ViewForAllDishes: UIView {
     
         lazy var beansCollection: UICollectionView = {
-        let screenSize = UIScreen.main.bounds
+        //let screenSize = UIScreen.main.bounds
             let layout = CollectionViewPagingLayout()
             let collection = UICollectionView(
                       frame: self.frame,
                       collectionViewLayout: layout
                   )
-            collection.backgroundColor = .white
-            collection.showsHorizontalScrollIndicator = false
-        collection.register(MyCustomCollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
-          
+        collection.backgroundColor = .white
+        collection.showsHorizontalScrollIndicator = false
+            collection.register(MyCustomCollectionViewCell.self, forCellWithReuseIdentifier: MyCustomCollectionViewCell.reuseIdentifier)
         return collection
     }()
     
@@ -38,6 +37,7 @@ class ViewForAllDishes: UIView {
     
     private func setupCollection() {
         self.addSubview(beansCollection)
+        
         beansCollection.snp.makeConstraints { make in
             make.leading.equalTo(self)
             make.trailing.equalTo(self)
@@ -45,5 +45,4 @@ class ViewForAllDishes: UIView {
             make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
-    
 }

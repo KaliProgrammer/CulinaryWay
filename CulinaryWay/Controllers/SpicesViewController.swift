@@ -42,7 +42,7 @@ extension SpicesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpiceCollectionViewCell.identifier, for: indexPath) as! SpiceCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpiceCollectionViewCell.reuseIdentifier, for: indexPath) as! SpiceCollectionViewCell
         let categoryName = spicesCategories[indexPath.row].spicesCategory
         if indexPath.row == 0 {
             

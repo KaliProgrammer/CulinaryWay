@@ -20,22 +20,14 @@ class SpicesView: UIView {
                   )
    
         collection.backgroundColor = .white
-        collection.register(SpiceCollectionViewCell.self, forCellWithReuseIdentifier: SpiceCollectionViewCell.identifier)
+        collection.register(SpiceCollectionViewCell.self, forCellWithReuseIdentifier: SpiceCollectionViewCell.reuseIdentifier)
+        collection.register(VideoCategoriesCollectionViewCell.self, forCellWithReuseIdentifier: VideoCategoriesCollectionViewCell.reuseIdentifier)
         return collection
     }()
-    
-//    private lazy var logoImage: UIImageView = {
-//        let logo = UIImageView()
-//        logo.translatesAutoresizingMaskIntoConstraints = false
-//        logo.contentMode = .scaleAspectFit
-//        logo.image = UIImage(named: "")
-//        return logo
-//    }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCollection()
-        //setupLogoImage()
     }
     
     required init?(coder: NSCoder) {
@@ -50,23 +42,13 @@ class SpicesView: UIView {
     private func  setupCollection() {
         self.addSubview(navigationCollection)
         navigationCollection.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(200)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(150)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
-    
-//    private func setupLogoImage() {
-//        self.addSubview(logoImage)
-//        logoImage.snp.makeConstraints { make in
-//            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(160)
-//            make.centerX.equalTo(snp.centerX)
-//            make.bottom.equalTo(navigationCollection.snp.top).offset(8)
-//        }
-        
-        
-    }
+}
     
     
     

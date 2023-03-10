@@ -11,7 +11,7 @@ class BeanDishesViewController: UIViewController {
 
   let beansView = ViewForAllDishes()
    public var storedIndex = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -19,21 +19,17 @@ class BeanDishesViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         beansView.beansCollection.delegate = self
         beansView.beansCollection.dataSource = self
-        
         setupBeansView()
-       
     }
     
     func setupBeansView() {
         view.addSubview(beansView)
-        
         beansView.snp.makeConstraints { make in
             make.leading.equalTo(self.view).offset(16)
             make.trailing.equalTo(self.view).offset(-16)
             make.top.equalTo(self.view)
             make.bottom.equalTo(self.view)
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,23 +39,22 @@ class BeanDishesViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
     }
-
 }
 
 extension BeanDishesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dalData.count
     }
    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCustomCollectionViewCell
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCollectionViewCell.reuseIdentifier, for: indexPath) as! MyCustomCollectionViewCell
         item.apply(spiceLabel: dalPictures[indexPath.row])
         if let pictures = UIImage(named: dalPictures[indexPath.row]) {
             item.apply(photos: pictures)
         }
         item.layer.cornerRadius = 28
         item.setup(cell: item)
+        
         return item
     }
     
@@ -72,7 +67,6 @@ extension BeanDishesViewController: UICollectionViewDataSource, UICollectionView
             viewModel.loadImage(image: dalImage, from: viewController.contentView)
         }
         dishNames.append(dalData[indexPath.row])
-  
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

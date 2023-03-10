@@ -28,7 +28,7 @@ private lazy var spicesViewController: UINavigationController = {
 }()
 
 private lazy var videoViewController: UINavigationController = {
-    let controller = UINavigationController(rootViewController: VideoViewController())
+    let controller = UINavigationController(rootViewController: VideoCategoriesViewController())
     controller.tabBarItem.image = UIImage(systemName: "play.rectangle.on.rectangle.fill")
     controller.tabBarItem.title = "Видео"
     controller.navigationBar.prefersLargeTitles = true
@@ -36,14 +36,14 @@ private lazy var videoViewController: UINavigationController = {
     return controller
 }()
     
-    private lazy var fruitsViewController: UINavigationController = {
-        let controller = UINavigationController(rootViewController: FruitsViewController())
-        controller.tabBarItem.image = UIImage(systemName: "sun.max.fill")
-        controller.tabBarItem.title = "Фрукты"
-        controller.navigationBar.prefersLargeTitles = true
-        controller.navigationBar.backgroundColor = .white
-        return controller
-    }()
+//    private lazy var fruitsViewController: UINavigationController = {
+//        let controller = UINavigationController(rootViewController: FruitsViewController())
+//        controller.tabBarItem.image = UIImage(systemName: "sun.max.fill")
+//        controller.tabBarItem.title = "Фрукты"
+//        controller.navigationBar.prefersLargeTitles = true
+//        controller.navigationBar.backgroundColor = .white
+//        return controller
+//    }()
 
 private lazy var myFavoriteViewController: UINavigationController = {
     let controller = UINavigationController(rootViewController: MyFavoriteViewController())
@@ -51,7 +51,6 @@ private lazy var myFavoriteViewController: UINavigationController = {
     controller.tabBarItem.title = "Избранное"
     controller.navigationBar.backgroundColor = .white
     controller.navigationBar.prefersLargeTitles = true
-   
     return controller
 }()
 
@@ -62,13 +61,11 @@ override func viewDidLoad() {
     
     self.tabBar.tintColor = .orange
     
-    //UIColor(cgColor: CGColor(red: 1.0, green: 0.74, blue: 0.3, alpha: 1.0))
-    setViewControllers([mainViewController, videoViewController, fruitsViewController, spicesViewController, myFavoriteViewController], animated: true)
+    setViewControllers([mainViewController, spicesViewController, videoViewController, myFavoriteViewController], animated: true)
 
          UITabBar.appearance().barTintColor = .white
     UITabBar.appearance().tintColor = .systemOrange
     
-    //UIColor(cgColor: CGColor(red: 1.0, green: 0.74, blue: 0.3, alpha: 1.0))
          UITabBar.appearance().isTranslucent = true
          
          if #available(iOS 15.0, *) {
@@ -82,5 +79,5 @@ override func viewDidLoad() {
              navigationBarAppearance.configureWithOpaqueBackground()
              UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
          }
-}
+    }
 }

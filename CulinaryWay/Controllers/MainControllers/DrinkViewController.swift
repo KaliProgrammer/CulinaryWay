@@ -54,7 +54,7 @@ extension DrinkViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCustomCollectionViewCell
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCollectionViewCell.reuseIdentifier, for: indexPath) as! MyCustomCollectionViewCell
         item.apply(spiceLabel: drinksPictures[indexPath.row])
         if let pictures = UIImage(named: drinksPictures[indexPath.row]) {
             item.apply(photos: pictures)

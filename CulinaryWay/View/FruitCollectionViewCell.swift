@@ -11,7 +11,6 @@ import SnapKit
 
 class FruitCollectionViewCell: UICollectionViewCell {
     static let identifier = "FruitCollectionViewCell"
-    
         private lazy var photoOfAllDishes: UIImageView = {
             let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFill
@@ -33,29 +32,21 @@ class FruitCollectionViewCell: UICollectionViewCell {
         
         override func layoutSubviews() {
             super.layoutSubviews()
-
             photoOfAllDishes.snp.makeConstraints { make in
                 make.top.equalTo(self.contentView)
                 make.leading.trailing.equalTo(self.contentView)
                 make.bottom.equalTo(self.contentView.snp.bottom)
             }
         }
-            
-    
     func apply(photos: UIImage) {
         self.photoOfAllDishes.image = photos
     }
     
     func setup(cell: FruitCollectionViewCell) {
-       
         cell.layer.shadowRadius = 5.0
         cell.layer.shadowOffset = CGSize(width: 2, height: 2)
         cell.layer.shadowOpacity = 1
         cell.layer.shadowColor = .init(red: 10/255, green: 12/255, blue: 11/255, alpha: 1)
-
     }
-    
-   
-
 }
 

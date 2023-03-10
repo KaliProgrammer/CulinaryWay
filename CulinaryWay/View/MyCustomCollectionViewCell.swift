@@ -53,7 +53,6 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
     func setupSelectLabel() {
         self.contentView.addSubview(selectLabel)
         selectLabel.frame = CGRect(x: 113, y: 10, width: 38, height: 38)
-        
     }
     
      lazy var photoOfAllDishes: UIImageView = {
@@ -61,7 +60,6 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    
     
      lazy var dishesLabel: UILabel = {
         let label = UILabel()
@@ -77,14 +75,10 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
         return label
     }()
     
-
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-  
     }
 
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         dishesLabel.text = nil
@@ -104,7 +98,6 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
         cell.layer.shadowOffset = CGSize(width: 2, height: 2)
         cell.layer.shadowOpacity = 0.8
         cell.layer.shadowColor = .init(red: 10/255, green: 12/255, blue: 11/255, alpha: 1)
-        
     }
     
     func apply(spiceLabel: String) {
@@ -140,7 +133,6 @@ class MyCustomCollectionViewCell: UICollectionViewCell, ScaleTransformView, MyCu
     }
     
     func setup() {
-        
         card.addSubview(photoOfAllDishes)
         card.addSubview(dishesLabel)
         dishesLabel.snp.makeConstraints { make in

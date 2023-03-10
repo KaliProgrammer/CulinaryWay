@@ -14,8 +14,8 @@ class MainView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
-        collection.register(FruitCollectionViewCell.self, forCellWithReuseIdentifier: FruitCollectionViewCell.identifier)
+        collection.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: MainCollectionViewCell.reuseIdentifier)
+        collection.register(FruitCollectionViewCell.self, forCellWithReuseIdentifier: FruitCollectionViewCell.reuseIdentifier)
         collection.showsVerticalScrollIndicator = false
         collection.allowsSelection = true
         collection.allowsMultipleSelection = false

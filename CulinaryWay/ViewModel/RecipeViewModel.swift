@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import Combine
 
-
 protocol RecipeProtocol: AnyObject {
     func addItems(sender: UIButton, viewController: RecipeViewController)
     func createItem(image: String, description: String, viewController: RecipeViewController)
@@ -47,17 +46,20 @@ class RecipeViewModel: RecipeProtocol, ApplyDescriptionProtocol {
     var delegate: AddRecipeDelegate?
     
     func createItem(image: String, description: String, viewController: RecipeViewController) {
+   
         let newItem = Dish(context: context)
         newItem.image = image
         newItem.recipe = description
         
-        if savedRecipe.contains(where: { $0.image == newItem.image }) {
+        if savedRecipe.contains(where: {$0.image == newItem.image}) {
             let alert = UIAlertController(title: "Упс", message: "Такой рецепт уже был сохранён!", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .cancel)
-            alert.addAction(action)
-            viewController.present(alert, animated: true)
-            return
+                let action = UIAlertAction(title: "Ok", style: .cancel)
+                alert.addAction(action)
+                viewController.present(alert, animated: true)
+                return
         } else {
+          
+           
             savedRecipe.append(newItem)
             do {
                 try self.context.save()
@@ -68,18 +70,17 @@ class RecipeViewModel: RecipeProtocol, ApplyDescriptionProtocol {
     }
     
     func addItems(sender: UIButton, viewController: RecipeViewController) {
+       
+        createItem(image: dishNames[dishNames.count-1].image, description: dishNames[dishNames.count-1].dish, viewController: viewController)
         
-        for item in dishNames {
-            createItem(image: item.image, description: item.dish, viewController: viewController)
-        }
         let count = savedRecipe.count
         delegate?.addRecipe(recipe: count)
         dishNames.removeAll()
-           // createItem(image: dishNames[0].image, description: dishNames[0].dish, viewController: viewController)
-            sender.isSelected = !sender.isSelected
-            if sender.isSelected {
-                sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                sender.tintColor = .red
-            }
+        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            sender.tintColor = .red
+        }
     }
 }

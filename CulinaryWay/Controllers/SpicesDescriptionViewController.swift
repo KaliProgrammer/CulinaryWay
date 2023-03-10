@@ -3,12 +3,16 @@ import UIKit
 
 class SpicesDescriptionViewController: UIViewController {
     
-    //var dataSourceArray: [String] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .white
+        setupNavigation()
     }
     
+    func setupNavigation() {
+        view.backgroundColor = .white
+        self.navigationItem.title = "Главная"
+        self.navigationItem.largeTitleDisplayMode = .always
+    }
 
 }

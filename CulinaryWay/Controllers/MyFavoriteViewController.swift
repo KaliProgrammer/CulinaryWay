@@ -123,7 +123,7 @@ class MyFavoriteViewController: MainViewController {
             navigationItem.leftBarButtonItem = editButtonItem
             editButtonItem.title = "Изменить"
             editButtonItem.tintColor = .systemOrange
-          //  self.mainView.collectionView.reloadData()
+            //self.mainView.collectionView.reloadData()
         }
 
     }
@@ -176,8 +176,8 @@ class MyFavoriteViewController: MainViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.reuseIdentifier, for: indexPath) as? MainCollectionViewCell else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.reuseIdentifier, for: indexPath)
             return cell
         }
         
@@ -214,7 +214,7 @@ class MyFavoriteViewController: MainViewController {
                 
                 if let dalImage = savedRecipe[indexPath.row].image {
                     viewModel.loadImage(image: UIImage(named: dalImage)!, from: viewController.contentView)
-                    storedImages.removeAll()
+                    //storedImages.removeAll()
                 }
             }
                 pushView(viewController: viewController)

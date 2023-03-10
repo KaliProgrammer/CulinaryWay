@@ -16,9 +16,7 @@ class SpiceCollectionViewCell: UICollectionViewCell, SnapshotTransformView {
        imageView.contentMode = .scaleAspectFill
        return imageView
    }()
-   
-    static let identifier = "SpiceCollectionViewCell"
-    
+       
     private lazy var spiceLabel: UILabel = {
         let myLabel = UILabel()
         myLabel.textAlignment = .center
@@ -86,7 +84,6 @@ var card: UIView!
                 make.leading.trailing.equalTo(card)
                 make.bottom.equalTo(card.snp.bottom).offset(-40)
             }
-
         }
         contentView.addSubview(card)
     }

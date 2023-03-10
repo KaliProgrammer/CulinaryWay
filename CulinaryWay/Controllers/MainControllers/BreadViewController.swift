@@ -54,7 +54,7 @@ extension BreadViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCustomCollectionViewCell
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyCustomCollectionViewCell.reuseIdentifier, for: indexPath) as! MyCustomCollectionViewCell
         item.apply(spiceLabel: breadPictures[indexPath.row])
         if let pictures = UIImage(named: breadPictures[indexPath.row]) {
             item.apply(photos: pictures)

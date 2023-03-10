@@ -10,11 +10,8 @@ import UIKit
 import Combine
 
 class MyFavoriteViewModel {
-    
     let labelText = PassthroughSubject<String, Never>()
-    
     func setText() {
         labelText.send("Нет рецептов")
     }
-
 }

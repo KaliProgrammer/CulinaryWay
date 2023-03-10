@@ -7,8 +7,11 @@
 
 import Foundation
 
-var cookingVideos: [String] = [
-"qe4FrAso2lo",
+var ourVideos: [String] = [
+"qe4FrAso2lo"
+]
+
+var streeFoodVideos: [String] = [
 "vLl7erB2xS0",
 "i8j_Oye1q4U"
 ]

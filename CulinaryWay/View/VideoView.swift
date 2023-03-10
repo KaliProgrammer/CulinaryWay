@@ -20,7 +20,7 @@ class VideoView: UIView {
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .white
-        collection.register(VideosCollectionViewCell.self, forCellWithReuseIdentifier: VideosCollectionViewCell.identifier)
+        collection.register(VideosCollectionViewCell.self, forCellWithReuseIdentifier: VideosCollectionViewCell.reuseIdentifier)
         return collection
     }()
     

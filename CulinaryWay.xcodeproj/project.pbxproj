@@ -16,12 +16,13 @@
 		D016A27A2982D92900164068 /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016A2792982D92900164068 /* VideosCollectionViewCell.swift */; };
 		D016A27C2982DCE200164068 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016A27B2982DCE200164068 /* VideoModel.swift */; };
 		D016A27E2982E9AB00164068 /* ChutneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016A27D2982E9AB00164068 /* ChutneyViewController.swift */; };
+		D023A82429BA76F10018E588 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D023A82329BA76F10018E588 /* ReuseIdentifiable.swift */; };
 		D040EF5A294A51170087D671 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF59294A51170087D671 /* TabBarViewController.swift */; };
 		D040EF5C294A51750087D671 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF5B294A51750087D671 /* MainViewController.swift */; };
 		D040EF5E294A525E0087D671 /* SpicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF5D294A525E0087D671 /* SpicesViewController.swift */; };
 		D040EF61294A53B30087D671 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF60294A53B30087D671 /* MainView.swift */; };
 		D040EF64294A54770087D671 /* SpicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF63294A54770087D671 /* SpicesView.swift */; };
-		D040EF66294A565C0087D671 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF65294A565C0087D671 /* VideoViewController.swift */; };
+		D040EF66294A565C0087D671 /* VideoCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF65294A565C0087D671 /* VideoCategoriesViewController.swift */; };
 		D040EF68294A56840087D671 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF67294A56840087D671 /* MyFavoriteViewController.swift */; };
 		D040EF6A294A569C0087D671 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF69294A569C0087D671 /* VideoView.swift */; };
 		D040EF6C294A56A50087D671 /* MyFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D040EF6B294A56A50087D671 /* MyFavoriteView.swift */; };
@@ -60,6 +61,9 @@
 		D0D6979E29799BEB00059F25 /* CulinaryWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0D6979C29799BEB00059F25 /* CulinaryWay.xcdatamodeld */; };
 		D0DB7B2D2955333C00C2EC69 /* FruitsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DB7B2C2955333C00C2EC69 /* FruitsDescriptionViewController.swift */; };
 		D0DB7B3029553C0B00C2EC69 /* FruitsDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DB7B2F29553C0B00C2EC69 /* FruitsDescriptionView.swift */; };
+		D0E7793C29A953DA00DF4F5A /* VideoCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7793B29A953DA00DF4F5A /* VideoCategories.swift */; };
+		D0E7793E29A9551F00DF4F5A /* VideoCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7793D29A9551F00DF4F5A /* VideoCategoriesCollectionViewCell.swift */; };
+		D0E7794029A95A5A00DF4F5A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7793F29A95A5A00DF4F5A /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,12 +76,13 @@
 		D016A2792982D92900164068 /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		D016A27B2982DCE200164068 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		D016A27D2982E9AB00164068 /* ChutneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChutneyViewController.swift; sourceTree = "<group>"; };
+		D023A82329BA76F10018E588 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		D040EF59294A51170087D671 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D040EF5B294A51750087D671 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D040EF5D294A525E0087D671 /* SpicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesViewController.swift; sourceTree = "<group>"; };
 		D040EF60294A53B30087D671 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		D040EF63294A54770087D671 /* SpicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicesView.swift; sourceTree = "<group>"; };
-		D040EF65294A565C0087D671 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		D040EF65294A565C0087D671 /* VideoCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoriesViewController.swift; sourceTree = "<group>"; };
 		D040EF67294A56840087D671 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		D040EF69294A569C0087D671 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		D040EF6B294A56A50087D671 /* MyFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteView.swift; sourceTree = "<group>"; };
@@ -117,6 +122,9 @@
 		D0D6979D29799BEB00059F25 /* CulinaryDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CulinaryDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D0DB7B2C2955333C00C2EC69 /* FruitsDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsDescriptionViewController.swift; sourceTree = "<group>"; };
 		D0DB7B2F29553C0B00C2EC69 /* FruitsDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsDescriptionView.swift; sourceTree = "<group>"; };
+		D0E7793B29A953DA00DF4F5A /* VideoCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategories.swift; sourceTree = "<group>"; };
+		D0E7793D29A9551F00DF4F5A /* VideoCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0E7793F29A95A5A00DF4F5A /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		FA401504BA354717E0209440 /* Pods_CulinaryWay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CulinaryWay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +168,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D023A82229BA76E20018E588 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D023A82329BA76F10018E588 /* ReuseIdentifiable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D040EF5F294A53970087D671 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +188,7 @@
 				D040EF6D294A597E0087D671 /* MainCollectionViewCell.swift */,
 				D0089F4329A0795F00D72689 /* MyCustomCollectionViewCell.swift */,
 				D006E910299FE48400DBC66F /* SpiceCollectionViewCell.swift */,
+				D0E7793D29A9551F00DF4F5A /* VideoCategoriesCollectionViewCell.swift */,
 				D072C45A29878EA100D588DC /* FruitCollectionViewCell.swift */,
 				D016A2792982D92900164068 /* VideosCollectionViewCell.swift */,
 				D0ADA46B294B7C2800CF5B2E /* RecipeCollectionViewCell.swift */,
@@ -186,7 +203,8 @@
 				D040EF5B294A51750087D671 /* MainViewController.swift */,
 				D040EF5D294A525E0087D671 /* SpicesViewController.swift */,
 				D0AD4CE5299F2CD600151954 /* SpicesDescriptionViewController.swift */,
-				D040EF65294A565C0087D671 /* VideoViewController.swift */,
+				D040EF65294A565C0087D671 /* VideoCategoriesViewController.swift */,
+				D0E7793F29A95A5A00DF4F5A /* VideoViewController.swift */,
 				D070AC95294C2A3A0097629C /* FruitsViewController.swift */,
 				D0DB7B2C2955333C00C2EC69 /* FruitsDescriptionViewController.swift */,
 				D040EF67294A56840087D671 /* MyFavoriteViewController.swift */,
@@ -202,6 +220,7 @@
 				D040EF70294A5E900087D671 /* DishesCategory.swift */,
 				D0ADA46D294B80A000CF5B2E /* AllRecipeCategory.swift */,
 				D016A27B2982DCE200164068 /* VideoModel.swift */,
+				D0E7793B29A953DA00DF4F5A /* VideoCategories.swift */,
 				D0AD4CE3299F2AD000151954 /* SpicesCategories.swift */,
 			);
 			path = Model;
@@ -262,6 +281,7 @@
 		D0AA9E5B294A430A006EB54F /* CulinaryWay */ = {
 			isa = PBXGroup;
 			children = (
+				D023A82229BA76E20018E588 /* Extensions */,
 				D0089F4B29A2882600D72689 /* ViewModel */,
 				D0B09C5629845FBC00B2EEC2 /* NetworkMonitor */,
 				D0D6979F29799E2500059F25 /* CoreData */,
@@ -460,7 +480,8 @@
 				D040EF61294A53B30087D671 /* MainView.swift in Sources */,
 				D0D6979E29799BEB00059F25 /* CulinaryWay.xcdatamodeld in Sources */,
 				D0ADA46A294B7BAA00CF5B2E /* ViewForAllDishes.swift in Sources */,
-				D040EF66294A565C0087D671 /* VideoViewController.swift in Sources */,
+				D040EF66294A565C0087D671 /* VideoCategoriesViewController.swift in Sources */,
+				D0E7793C29A953DA00DF4F5A /* VideoCategories.swift in Sources */,
 				D069DAFF294D354B000E93F4 /* URLSession.swift in Sources */,
 				D040EF6E294A597E0087D671 /* MainCollectionViewCell.swift in Sources */,
 				D040EF5E294A525E0087D671 /* SpicesViewController.swift in Sources */,
@@ -482,12 +503,15 @@
 				D0AD4CE6299F2CD600151954 /* SpicesDescriptionViewController.swift in Sources */,
 				D040EF7A294A86A10087D671 /* BreadViewController.swift in Sources */,
 				D040EF6A294A569C0087D671 /* VideoView.swift in Sources */,
+				D023A82429BA76F10018E588 /* ReuseIdentifiable.swift in Sources */,
 				D051EF77297B270F00833608 /* Dish+CoreDataClass.swift in Sources */,
 				D0089F4429A0795F00D72689 /* MyCustomCollectionViewCell.swift in Sources */,
+				D0E7793E29A9551F00DF4F5A /* VideoCategoriesCollectionViewCell.swift in Sources */,
 				D0AD4CE4299F2AD000151954 /* SpicesCategories.swift in Sources */,
 				D016A27A2982D92900164068 /* VideosCollectionViewCell.swift in Sources */,
 				D072C45D2988B30A00D588DC /* SabjiViewController.swift in Sources */,
 				D016A27C2982DCE200164068 /* VideoModel.swift in Sources */,
+				D0E7794029A95A5A00DF4F5A /* VideoViewController.swift in Sources */,
 				D0C9DA20295007470058FB53 /* RecipeViewController.swift in Sources */,
 				D070AC96294C2A3A0097629C /* FruitsViewController.swift in Sources */,
 				D0B09C5829845FD400B2EEC2 /* NetworkMonitor.swift in Sources */,
