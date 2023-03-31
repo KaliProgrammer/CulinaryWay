@@ -1,0 +1,44 @@
+PODS:
+  - CollectionViewPagingLayout (1.1.0)
+  - ShimmerSwift (2.1.1)
+  - SnapKit (5.6.0)
+  - Splash (0.13.0)
+  - SwiftLint (0.50.3)
+  - youtube-ios-player-helper (1.0.4)
+
+DEPENDENCIES:
+  - CollectionViewPagingLayout
+  - ShimmerSwift
+  - SnapKit
+  - Splash (from `https://github.com/amirdew/Splash.git`)
+  - SwiftLint
+  - youtube-ios-player-helper
+
+SPEC REPOS:
+  trunk:
+    - CollectionViewPagingLayout
+    - ShimmerSwift
+    - SnapKit
+    - SwiftLint
+    - youtube-ios-player-helper
+
+EXTERNAL SOURCES:
+  Splash:
+    :git: https://github.com/amirdew/Splash.git
+
+CHECKOUT OPTIONS:
+  Splash:
+    :commit: 919ad99dfdc16b82665c44c3b6494f4e5f22bcec
+    :git: https://github.com/amirdew/Splash.git
+
+SPEC CHECKSUMS:
+  CollectionViewPagingLayout: 2f8d50683bae57ca88f47fa4ab0195c9079582cf
+  ShimmerSwift: f7ed2daf9c246de8299dfd9e12c6ab465cba9842
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Splash: 5ec9a07c4bbf047ddd659bfc11d35331d31004f7
+  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
+
+PODFILE CHECKSUM: ac5fb087c0fb0c0b3a0be51ef62332349e092165
+
+COCOAPODS: 1.11.3

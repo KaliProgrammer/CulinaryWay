@@ -1,0 +1,25 @@
+{
+  "name": "Splash",
+  "version": "0.13.0",
+  "summary": "Swift syntax highlighter",
+  "description": "A fast, lightweight and flexible Swift syntax highlighter for blogs, tools and fun!",
+  "homepage": "https://github.com/amirdew/Splash",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "JohnSundell": "@JohnSundell"
+  },
+  "source": {
+    "git": "https://github.com/amirdew/Splash.git",
+    "tag": "0.13.0"
+  },
+  "source_files": "Sources/Splash/**/*.swift",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

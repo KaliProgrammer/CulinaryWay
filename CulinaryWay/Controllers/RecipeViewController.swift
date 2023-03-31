@@ -25,7 +25,7 @@ class RecipeViewController: UIViewController {
     
     var contentView = RecipeView()
     
-    private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 1500)
+    private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 600)
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
